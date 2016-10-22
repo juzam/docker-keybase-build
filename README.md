@@ -17,7 +17,7 @@ docker build -t keybase-build -f Dockerfilename .
 after the build is finished you can copy keybase binary with
 
 ```
-docker run -it test -v $(pwd):/tmp /bin/bash 
+docker run -it -v $(pwd):/tmp keybase-build /bin/bash 
 ```
 
 and then inside the container ``cp keybase /tmp``
