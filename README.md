@@ -3,8 +3,9 @@ Dockerfiles to build keybase.io clent
 
 Inspired by [keybase client issue #2938](https://github.com/keybase/client/issues/2938)
 
-- Dockerfile-arm: Docker file to build keybase client for linux/ARM, tested on Raspberry PI 3. 
-- Dockerfile-x86: Docker file to build keybase client for linux/x86
+- Dockerfile: Docker file to build keybase client for linux/x86
+- Dockerfil.arm: Docker file to build keybase client for linux/ARM (native) tested on Raspberry PI 3. 
+- Dockerfile.xcompile-arm: Dockerfile to build keybase cliente for linux/Arm (crosscompile from x86)
 
 # Usage
 
