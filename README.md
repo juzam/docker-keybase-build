@@ -7,7 +7,7 @@ Inspired by [keybase client issue #2938](https://github.com/keybase/client/issue
 - Dockerfil.arm: Docker file to build keybase client for linux/ARM (native) tested on Raspberry PI 3. 
 - Dockerfile.xcompile-arm: Dockerfile to build keybase cliente for linux/Arm (crosscompile from x86)
 
-# Usage with docker-compose
+## Usage with docker-compose
 
 A `docker-compose.yml` file is provided, so after cloning the repository you can: 
 `docker-compose up <servicename>`  and the keybase binary will get copied to
@@ -22,7 +22,7 @@ Services:
    see later for specific build notes)
 
 
-# Special notes for native ARM build
+## Special notes for native ARM build
 
 In order to build you need `docker-compose` and a golang docker image wit golang
 version >= 1.7.x
@@ -38,7 +38,7 @@ after that simply do: `doker-compose up keybase-native-arm`
 (the golang image is marked as a requirement in the compose file, so it will get
 built the first time if it's not present)
 
-# Cleanup and rebuild
+## Cleanup and rebuild
 
 The included `cleanup.sh` removes old containers, and keybase-build image in
 order to start from scratch. (note that it doesn't remove the golang image so
@@ -46,7 +46,7 @@ you don't have to rebuild that every time)
 
 
 
-# OLD Usage (docker-compose is preferred):
+## OLD Usage (docker-compose is preferred):
 
 ```
 docker build -t keybase-build -f Dockerfilename .
