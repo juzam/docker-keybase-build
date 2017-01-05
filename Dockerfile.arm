@@ -1,4 +1,4 @@
-FROM hypriot/rpi-golang
+FROM golang-arm
 
 WORKDIR /gopath
 
