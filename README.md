@@ -46,7 +46,7 @@ you don't have to rebuild that every time)
 
 
 
-## OLD Usage (docker-compose is preferred):
+## OLD Usage with single Dockerfiles (docker-compose is preferred)
 
 ```
 docker build -t keybase-build -f Dockerfilename .
@@ -59,3 +59,7 @@ docker run -it -v $(pwd):/tmp keybase-build /bin/bash
 ```
 
 and then inside the container ``cp keybase /tmp``
+
+* Note that if you are compiling for ARM natively, you need the `golang-arm` image first, so init the
+submodule with  `git submodule update --init --recursive` then build the image with the Dockerfile inside the 
+`golang-arm` directory.
