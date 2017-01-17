@@ -1,0 +1,38 @@
+version: '2'
+
+services:
+
+  golang-arm:
+     build:
+       context: golang-arm
+       dockerfile: Dockerfile
+     image: golang-arm
+
+  keybase-native-arm:
+     build:
+       context: .
+       dockerfile: Dockerfile.arm
+     image: keybase-build
+     volumes:
+       - .:/tmp
+     command: cp ./keybase /tmp
+     depends_on:
+       - golang-arm
+
+  keybase-xcompile-arm:
+     build:
+       context: .
+       dockerfile: Dockerfile.xcompile-arm
+     image: keybase-build
+     volumes:
+       - .:/tmp
+     command: cp ./keybase /tmp
+
+  keybase-native-x86:
+     build:
+       context: .
+       dockerfile: Dockerfile
+     image: keybase-build
+     volumes:
+       - .:/tmp
+     command: cp ./keybase /tmp
